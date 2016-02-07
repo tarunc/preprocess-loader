@@ -58,7 +58,7 @@ module.exports = function(source) {
         line = line.replace(new RegExp('__FILE__'),""+fileName,'g');
       }
 
-      if(opt.config!==undefined && opt.cfg!==undefined && opt.cfg.regexes!==undefined) {
+      if(opt.cfg!==undefined && opt.cfg.regexes!==undefined) {
         for(var x=0;x<opt.cfg.regexes.length;x++) {
           if(opt.cfg.regexes[x].scope=="line") {
             if(opt.cfg.regexes[x].fileName=="all" || opt.cfg.regexes[x].fileName==fileName) {
@@ -68,7 +68,7 @@ module.exports = function(source) {
         }
       }
 
-      if(opt.config!==undefined && opt.cfg!==undefined && opt.cfg.macros!==undefined) {
+      if(opt.cfg!==undefined && opt.cfg.macros!==undefined) {
         for(var x=0;x<opt.cfg.macros.length;x++) {
           if(opt.cfg.macros[x].scope=="line") {
             if(opt.cfg.macros[x].fileName=="all" || opt.cfg.macros[x].fileName==fileName) {
@@ -78,7 +78,7 @@ module.exports = function(source) {
         }
       }
 
-      if(opt.config!==undefined && opt.cfg!==undefined && opt.cfg.callbacks!==undefined) {
+      if(opt.cfg!==undefined && opt.cfg.callbacks!==undefined) {
         for(var x=0;x<opt.cfg.callbacks.length;x++) {
           if(opt.cfg.callbacks[x].scope=="line" && (opt.cfg.callbacks[x].fileName=="all" || opt.cfg.callbacks[x].fileName==fileName)) {
             var cb = eval(opt.cfg.callbacks[x].callback);
@@ -93,7 +93,7 @@ module.exports = function(source) {
     }
   }
 
-  if(opt.config!==undefined && opt.cfg!==undefined && opt.cfg.regexes!==undefined) {
+  if(opt.cfg!==undefined && opt.cfg.regexes!==undefined) {
     for(var i=0;i<opt.cfg.regexes.length;i++) {
       if(opt.cfg.regexes[i].scope=="source") {
         if(opt.cfg.regexes[i].fileName=="all" || opt.cfg.regexes[i].fileName==fileName) {
@@ -103,7 +103,7 @@ module.exports = function(source) {
     }
   }
 
-  if(opt.config!==undefined && opt.cfg!==undefined && opt.cfg.macros!==undefined) {
+  if(opt.cfg!==undefined && opt.cfg.macros!==undefined) {
     for(var x=0;x<opt.cfg.macros.length;x++) {
       if(opt.cfg.macros[x].scope=="source") {
         if(opt.cfg.macros[x].fileName=="all" || opt.cfg.macros[x].fileName==fileName) {
@@ -113,7 +113,7 @@ module.exports = function(source) {
     }
   }
 
-  if(opt.config!==undefined && opt.cfg!==undefined && opt.cfg.callbacks!==undefined) {
+  if(opt.cfg!==undefined && opt.cfg.callbacks!==undefined) {
     for(var i=0;i<opt.cfg.callbacks.length;i++) {
       if(opt.cfg.callbacks[i].scope=="source" && (opt.cfg.callbacks[i].fileName=="all" || opt.cfg.callbacks[i].fileName==fileName)) {
         var cb = eval(opt.cfg.callbacks[i].callback);
