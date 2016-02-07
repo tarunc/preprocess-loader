@@ -1,7 +1,7 @@
 'use strict';
 
 var loaderUtils	= require("loader-utils");
-var fs 		= require("fs");	
+var fs 		= require("fs");
 var path	= require("path");
 
 module.exports = function(source) {
@@ -13,7 +13,7 @@ module.exports = function(source) {
     "line"	: queryString.line,
     "file"	: queryString.file,
     "config"	: queryString.config,
-    "cfg"	: {} 
+    "cfg"	: queryString.cfg
   };
 
   if(queryString.line===undefined) {
@@ -26,7 +26,7 @@ module.exports = function(source) {
 
   var line	= "";
   var content	= "";
-  var fileName	= path.parse(this.resource).base; 
+  var fileName	= path.parse(this.resource).base;
 
   if(((opt.config!==undefined)?true:false)) {
     try {
@@ -76,7 +76,7 @@ module.exports = function(source) {
             }
           }
         }
-      } 
+      }
 
       if(opt.config!==undefined && opt.cfg!==undefined && opt.cfg.callbacks!==undefined) {
         for(var x=0;x<opt.cfg.callbacks.length;x++) {

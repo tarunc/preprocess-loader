@@ -1,6 +1,6 @@
 {
   "name": "preprocessor-loader",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Preprocessor loader for webpack.  Allows for regular expressions, callbacks, macros, similiar to the C preprocessor",
   "main": "preprocessor-loader.js",
   "scripts": {
@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "fs": "0.0.2",
-    "loader-utils": "^0.2.11",
+    "loader-utils": "^0.2.12",
     "path": "^0.12.7"
   },
   "keywords": [
